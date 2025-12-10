@@ -11,6 +11,10 @@ def create_app():
 
     app.register_blueprint(authors_bp, url_prefix="/authors")
     app.register_blueprint(books_bp, url_prefix="/books")
+    
+    @app.route("/")
+    def status():
+        return "API server is running..."
 
     return app
 
